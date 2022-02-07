@@ -1,11 +1,8 @@
-import ItemCount from './ItemCount';
 
-const ItemlistContainer = () => {
+
+const ItemlistContainer = ({greeting}) => {
     return (
-        <div className="itemlistContainer">
-            <h1>Contador para el desafio</h1>
-            <ItemCount />
-        </div>
+        <div>{greeting}</div>
     );
 }
 
