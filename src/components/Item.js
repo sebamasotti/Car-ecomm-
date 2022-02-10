@@ -1,7 +1,34 @@
-const Item = () => {
-    return (
-        <h1>Hola</h1>
-    );
-}
+import { Card, CardBody, CardTitle, CardSubtitle, CardText } from 'reactstrap';
 
-export default Item;
+export default function Item({name, modelos, img}) {
+    return(
+
+        <div>
+        <Card>
+            <CardBody>
+            <CardTitle tag="h5">
+                {name}
+            </CardTitle>
+            <CardSubtitle
+                className="mb-2 text-muted"
+                tag="h6"
+            >
+                {modelos}
+            </CardSubtitle>
+            </CardBody>
+            <img
+            alt={name}
+            src={img}
+            height= "350px"
+            width="100%"
+            />
+            <CardBody>
+            <CardText>
+                Some quick example text to build on the card title and make up the bulk of the card's content.
+            </CardText>
+            </CardBody>
+        </Card>
+        </div>
+
+    )
+}
