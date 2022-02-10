@@ -1,31 +1,7 @@
-import { useEffect, useState } from 'react';
 import Item from './Item';
-import data from './data';
 
-const ItemList = () => {
+const ItemList = ({products}) => {
 
-    const [products, setProducts] = useState([]);
-
-    let listado = true;
-
-    const customFetch = (timeout, task) => {
-        return new Promise((resolve, reject) => {
-            setTimeout(() => {
-                if (listado) {
-                    resolve(task)
-                } else {
-                    reject("No se pudo")
-                }
-            }, timeout);
-        },)
-    }
-
-    useEffect(()=> {
-        customFetch(2000, data)
-        .then(res => setProducts(res))
-        .catch(error => console.log(error))
-        
-    },[])
 
     return (
         <div className="listado">

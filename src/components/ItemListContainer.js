@@ -1,17 +1,35 @@
-// import ItemCount from './ItemCount';
+import { useEffect,useState } from 'react';
 import ItemList from './ItemList';
+import data from './data';
+
 
 const ItemlistContainer = () => {
 
-    // const onAdd = (counter) => {
-    //     console.log(counter);
-    //     alert("Su cantidad agregada al carrito es de: " + counter)
-    // }
+    const [products, setProducts] = useState([]);
+    let listado = true;
+
+    const customFetch = (timeout, task) => {
+        return new Promise((resolve, reject) => {
+            setTimeout(() => {
+                if (listado) {
+                    resolve(task)
+                } else {
+                    reject("No se pudo")
+                }
+            }, timeout);
+        },)
+    }
+
+    useEffect(()=> {
+        customFetch(2000, data)
+        .then(res => setProducts(res))
+        .catch(error => console.log(error))
+        
+    },[])
 
     return (
         <div className="itemlistContainer">
-            <ItemList />
-            {/* <ItemCount stock={5} initial={1} onAdd={onAdd}/> */}
+            <ItemList products={products} />
         </div>
     );
     
