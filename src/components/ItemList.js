@@ -5,7 +5,7 @@ const ItemList = ({products}) => {
 
     return (
         <div className="listado">
-            {products.filter(el => el.id ===1).map(item => 
+            {products.map(item => 
                 <Item className ="card"
                 key={item.id} 
                 name={item.name} 
