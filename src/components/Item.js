@@ -19,12 +19,15 @@ export default function Item({name, modelos, img}) {
             <img
             alt={name}
             src={img}
-            height= "350px"
+            height= "500px"
             width="100%"
             />
             <CardBody>
             <CardText>
                 Some quick example text to build on the card title and make up the bulk of the card's content.
+                Some quick example text to build on the card title and make up the bulk of the card's content.
+                Some quick example text to build on the card title and make up the bulk of the card's content.
+                ...BUY NOW!!
             </CardText>
             </CardBody>
         </Card>
