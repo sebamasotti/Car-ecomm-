@@ -1,17 +1,18 @@
 import React from 'react'
 import CartWidget from './CartWidget'
 import { Link} from 'react-router-dom';
+import {NavLink} from 'reactstrap'
 
 const Navbar = () => {
   return (
-    <div className="container">
-      <div className="navbar">
-        <h1 className="logo"><Link to="/" style={{textDecoration: 'none', color: 'white'}}>Car-Shop</Link> </h1>
-        <ul>
-          <li> <Link to="/" style={{textDecoration: 'none', color: 'white'}}>Home</Link> </li>
-          <li><Link to="productos" style={{textDecoration: 'none', color: 'white'}}>Productos</Link> </li>
-          <li><Link to="nosotros" style={{textDecoration: 'none', color: 'white'}}>Nosotros</Link> </li>
-          <li><Link to="about" style={{textDecoration: 'none', color: 'white'}}>About</Link> </li>
+    <div className="navbar navbar-expand-lg navbar-dark bg-dark">
+      <div className="navbar navbar-expand-lg navbar-dark bg-dark">
+        <h1 className="logo"><Link to="/" style={{textDecoration: 'none', color: 'white', padding:'1rem'}}>Car-Shop</Link> </h1>
+        <ul className="navbar-nav me-center">
+          <NavLink> <Link to="/" style={{textDecoration: 'none', color: 'white'}}>Home</Link> </NavLink>
+          <NavLink><Link to='/category/Americano' style={{textDecoration: 'none', color: 'white'}}>Americano</Link> </NavLink>
+          <NavLink><Link to='/category/Europeo' style={{textDecoration: 'none', color: 'white'}}>Europeo</Link> </NavLink>
+          <NavLink><Link to='/category/Asiatico' style={{textDecoration: 'none', color: 'white'}}>Asiatico</Link> </NavLink>
         </ul>
         <CartWidget/>
       </div>

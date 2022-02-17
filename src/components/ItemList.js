@@ -10,7 +10,8 @@ const ItemList = ({products}) => {
                 key={item.id} 
                 name={item.name} 
                 modelos={item.modelos} 
-                img= {item.img} />
+                img= {item.img}
+                valor= {item.valor} />
                 )}
         </div>
         

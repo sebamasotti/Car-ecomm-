@@ -1,6 +1,5 @@
 html {
     box-sizing: border-box;
-    background-color: #1B263B
 }
   *, *:before, *:after {
     box-sizing: inherit;
@@ -10,16 +9,9 @@ h1{
     color: #E0E1DD;
 }
 
-.container {
-    width: 100%;
-    color: #E0E1DD;
-    background-color: #0D1B2A
-}
-
 .navbar {
-    width: 90%;
+    width: 100%;
     margin: auto;
-    padding: 1rem;
     display: flex;
     align-items: center;
     justify-content: space-between;
@@ -39,6 +31,8 @@ h1{
 .cartContainer{
     display: flex;
     align-items: center;
+    padding: 1rem;
+    color: #E0E1DD;
 }
 
 .cartIcon {
@@ -74,7 +68,12 @@ h1{
     flex-wrap: wrap;
 }
 
-.card {
+.card {                                                         
+    width: 360px;
+    height: 500px;
+    margin: 2rem;
+}
+.cardDetail {
     width: 1080px;
     height: 720px;
     margin: 2rem;

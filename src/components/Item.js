@@ -1,11 +1,12 @@
-import { Card, CardBody, CardTitle, CardSubtitle, CardText } from 'reactstrap';
+import { Card, CardBody, CardTitle, CardSubtitle, CardText, CardLink } from 'reactstrap';
+import { Link} from 'react-router-dom';
 
-export default function Item({name, modelos, img}) {
+export default function Item({name, modelos, img, valor, id}) {
     return(
 
         <div>
-        <Card>
-            <CardBody>
+        <Card style={{padding: '0,5rem'}}>
+            <CardBody style={{padding: '0,5rem'}} >
             <CardTitle tag="h5">
                 {name}
             </CardTitle>
@@ -16,19 +17,24 @@ export default function Item({name, modelos, img}) {
                 {modelos}
             </CardSubtitle>
             </CardBody>
-            <img
+            <img style={{padding: '1rem'}}
             alt={name}
             src={img}
-            height= "500px"
+            height= "200"
             width="100%"
+            
             />
-            <CardBody>
-            <CardText>
+            <CardBody style={{padding: '1rem'}}>
+            <CardText  >
                 Some quick example text to build on the card title and make up the bulk of the card's content.
-                Some quick example text to build on the card title and make up the bulk of the card's content.
-                Some quick example text to build on the card title and make up the bulk of the card's content.
-                ...BUY NOW!!
             </CardText>
+            <CardTitle tag="h5">
+                {valor}
+            </CardTitle>
+            <CardLink style={{textDecoration: 'none'}} >
+            <Link to={`/item/${id}`} style={{textDecoration: 'none'}}>Detalles del Producto</Link> 
+                
+            </CardLink>
             </CardBody>
         </Card>
         </div>
