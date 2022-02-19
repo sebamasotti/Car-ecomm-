@@ -9,8 +9,8 @@ const ItemDetail = ({name, modelos, img, valor}) => {
     }
     
     return (
-        <div>
-        <Card style={{padding: '0,5rem'}}>
+        <div style={{display:'flex'}}>
+        <Card style={{padding: '0,5rem', height:'700px', width:'700px'}}>
             <CardBody style={{padding: '0,5rem'}} >
             <CardTitle tag="h5">
                 {name}
@@ -25,7 +25,7 @@ const ItemDetail = ({name, modelos, img, valor}) => {
             <img style={{padding: '1rem'}}
             alt={name}
             src={img}
-            height= "200"
+            height= "400"
             width="100%"
             
             />

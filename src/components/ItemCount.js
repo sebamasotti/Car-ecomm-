@@ -16,10 +16,10 @@ const ItemCount = ({stock, initial, onAdd}) => {
 
     return (
         <div className="contador">
-            <h3 style={{color: 'darkslateblue'}}>{counter}</h3>
+            <h3 className="btn btn-info disabled" style={{color: 'darkslateblue'}}>{counter}</h3>
             <div>
-            <button className="btn btn-primary" onClick={increment}>+</button>
-            <button className="btn btn-primary" onClick={decrement}>-</button>
+            <button className="btn btn-primary" style={{margin:'1rem'}} onClick={increment}>+</button>
+            <button className="btn btn-primary" style={{margin:'1rem'}} onClick={decrement}>-</button>
             </div>
             <button className="btn btn-primary" onClick={() => {onAdd(counter)}}>Agregar al carrito</button>
         </div>

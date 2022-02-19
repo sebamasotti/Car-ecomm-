@@ -8,14 +8,14 @@ import Civic from'../assets/HondaCivic.jpeg';
 import HRV from'../assets/Honda-HRV.jpeg';
 import Ram from'../assets/DodgeRam.jpeg';
 
-const data = () => {
-    return (  
+export  const data = 
+
         [
             {
             "id": 1,
             "name": "Audi",
             "modelos": "A3",
-            "valor": "$10000",
+            "valor": "US$100.000",
             "img": audi,
             "idCategory": "Europeo"
             },
@@ -23,7 +23,7 @@ const data = () => {
             "id": 2,
             "name": "Chevrolet",
             "modelos": "Tracker",
-            "valor": "$3000",
+            "valor": "US$30.000",
             "img": tracker,
             "idCategory": "Americano"
             },
@@ -31,7 +31,7 @@ const data = () => {
             "id": 3,
             "name": "Citroen",
             "modelos": "C5",
-            "valor": "$4000",
+            "valor": "US$40.000",
             "img": citroenc5,
             "idCategory": "Europeo"
             },
@@ -39,7 +39,7 @@ const data = () => {
             "id": 4,
             "name": "Ford",
             "modelos": "Focus",
-            "valor": "$5000",
+            "valor": "US$30.000",
             "img": focus,
             "idCategory": "Americano"
             },
@@ -47,7 +47,7 @@ const data = () => {
             "id": 5,
             "name": "Dodge",
             "modelos": "Ram",
-            "valor": "$5000",
+            "valor": "US$80.000",
             "img": Ram,
             "idCategory": "Americano"
             },
@@ -55,7 +55,7 @@ const data = () => {
             "id": 6,
             "name": "Toyota",
             "modelos": "Corolla",
-            "valor": "$9000",
+            "valor": "$US50.000",
             "img": toyota,
             "idCategory": "Asiatico"
             },
@@ -63,7 +63,7 @@ const data = () => {
             "id": 7,
             "name": "Peugeot",
             "modelos": "208",
-            "valor": "$8000",
+            "valor": "$US30.000",
             "img": peugeot,
             "idCategory": "Europeo"
             },
@@ -71,7 +71,7 @@ const data = () => {
             "id": 8,
             "name": "Honda",
             "modelos": "Civic",
-            "valor": "$9000",
+            "valor": "US$60.000",
             "img": Civic,
             "idCategory": "Asiatico"
             },
@@ -79,12 +79,10 @@ const data = () => {
             "id": 9,
             "name": "Honda",
             "modelos": "HRV",
-            "valor": "$9000",
+            "valor": "US$90.000",
             "img": HRV,
             "idCategory": "Asiatico"
             }
-        ]
-    );
-}
+        ]    
 
-export default data;
+        export default data;
