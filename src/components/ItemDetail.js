@@ -1,15 +1,19 @@
+import { useState } from 'react';
+import { Link } from 'react-router-dom';
 import { Card, CardBody, CardTitle, CardSubtitle, CardText} from 'reactstrap';
+import CheckOut from './CheckOut';
 import ItemCount from './ItemCount';
 
 const ItemDetail = ({name, modelos, img, valor}) => {
+    const [itemCount, setItemCount] = useState(0);
 
     const onAdd = (counter) => {
-        console.log(counter);
+        setItemCount(counter)
         alert("Su cantidad agregada al carrito es de: " + counter)
     }
     
     return (
-        <div style={{display:'flex'}}>
+        <div style={{display:'flex', flexWrap:'wrap', justifyContent:'center', padding: '1rem'}} className="container">
         <Card style={{padding: '0,5rem', height:'700px', width:'700px'}}>
             <CardBody style={{padding: '0,5rem'}} >
             <CardTitle tag="h5">
@@ -38,7 +42,14 @@ const ItemDetail = ({name, modelos, img, valor}) => {
             </CardTitle>
             </CardBody>
         </Card>
-            <ItemCount stock={5} initial={1} onAdd={onAdd}/>
+        <div style={{display: 'flex', justifyContent: 'center', alignItems: 'center', margin:'2rem'}}>
+            {
+                itemCount === 0
+                ? <ItemCount stock={5} initial={1} onAdd={onAdd}/>
+                : <Link to='/cart' > <CheckOut /> </Link>
+            }
+        </div>
+            
         </div>
 
     );

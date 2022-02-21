@@ -2,10 +2,10 @@ import React from "react";
 import CartWidget from "./CartWidget";
 import { Link } from "react-router-dom";
 import { NavLink } from "reactstrap";
+import SearchForm from "./SearchForm";
 
 const Navbar = () => {
   return (
-    <div className="navbar navbar-expand-lg navbar-dark bg-dark">
       <div className="navbar navbar-expand-lg navbar-dark bg-dark">
         <h1 className="logo">
           <NavLink>
@@ -17,17 +17,12 @@ const Navbar = () => {
                 padding: "1rem",
               }}
             >
-              Car-Shop
+              CarShopp 🚙
             </Link>{" "}
           </NavLink>
         </h1>
-        <ul className="navbar-nav me-center">
-          <NavLink>
-            {" "}
-            <Link to="/" style={{ textDecoration: "none", color: "white" }}>
-              Home
-            </Link>{" "}
-          </NavLink>
+        <ul className="navbar-nav me-center"
+            style={{margin: '1rem'}}>
           <NavLink>
             <Link
               to="/category/Americano"
@@ -53,9 +48,9 @@ const Navbar = () => {
             </Link>{" "}
           </NavLink>
         </ul>
+          <SearchForm />
         <CartWidget />
       </div>
-    </div>
   );
 };
 

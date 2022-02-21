@@ -17,11 +17,11 @@ import customFetch from "../helpers/helpCustomFetch";
         }, 2000);
         customFetch(2000, data)
         .then((catalogo) => {
-            const elemfiltrado = catalogo.filter(
+            const elemfiltrado = catalogo.find(
             (item) => item.id === parseInt(idItem)
             );
 
-            setProducts(elemfiltrado[0]);
+            setProducts(elemfiltrado);
         })
         .catch((error) => console.log(error));
         // eslint-disable-next-line react-hooks/exhaustive-deps
