@@ -29,7 +29,7 @@ export default function Item({name, modelos, img, valor, id}) {
                 Some quick example text to build on the card title and make up the bulk of the card's content.
             </CardText>
             <CardTitle tag="h5">
-                {valor}
+                US${valor}
             </CardTitle>
             <CardLink style={{textDecoration: 'none'}} >
             <Link to={`/item/${id}`} style={{textDecoration: 'none'}}>Detalles del Producto</Link> 

@@ -37,6 +37,7 @@ import customFetch from "../helpers/helpCustomFetch";
             modelos={products.modelos}
             img={products.img}
             valor={products.valor}
+            id={products.id}
             />
         )}
         </div>

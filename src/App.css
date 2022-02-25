@@ -38,6 +38,7 @@ h1{
 
 .cartIcon {
     cursor: pointer;
+    color: #E0E1DD;
 }
 .cartCant {
     width: 1rem;

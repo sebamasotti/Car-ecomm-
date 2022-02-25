@@ -12,8 +12,9 @@ const ItemDetail = (item) => {
     const onAdd = (counter) => {
         setItemCount(counter)
         alert("Su cantidad agregada al carrito es de: " + counter)
-        test.addToCart(item)
+        test.addToCart(item, counter)
     }
+    
     
     return (
         <div style={{display:'flex', flexWrap:'wrap', justifyContent:'center', padding: '1rem'}} className="container">
@@ -41,7 +42,7 @@ const ItemDetail = (item) => {
                 Some quick example text to build on the card title and make up the bulk of the card's content.
             </CardText>
             <CardTitle tag="h5">
-                {item.valor}
+                US${item.valor}
             </CardTitle>
             </CardBody>
         </Card>

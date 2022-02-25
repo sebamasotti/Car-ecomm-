@@ -15,7 +15,7 @@ export  const data =
             "id": 1,
             "name": "Audi",
             "modelos": "A3",
-            "valor": "US$100.000",
+            "valor": 100000,
             "img": audi,
             "idCategory": "Europeo"
             },
@@ -23,7 +23,7 @@ export  const data =
             "id": 2,
             "name": "Chevrolet",
             "modelos": "Tracker",
-            "valor": "US$30.000",
+            "valor": 30000,
             "img": tracker,
             "idCategory": "Americano"
             },
@@ -31,7 +31,7 @@ export  const data =
             "id": 3,
             "name": "Citroen",
             "modelos": "C5",
-            "valor": "US$40.000",
+            "valor": 40000,
             "img": citroenc5,
             "idCategory": "Europeo"
             },
@@ -39,7 +39,7 @@ export  const data =
             "id": 4,
             "name": "Ford",
             "modelos": "Focus",
-            "valor": "US$30.000",
+            "valor": 30000,
             "img": focus,
             "idCategory": "Americano"
             },
@@ -47,7 +47,7 @@ export  const data =
             "id": 5,
             "name": "Dodge",
             "modelos": "Ram",
-            "valor": "US$80.000",
+            "valor": 80000,
             "img": Ram,
             "idCategory": "Americano"
             },
@@ -55,7 +55,7 @@ export  const data =
             "id": 6,
             "name": "Toyota",
             "modelos": "Corolla",
-            "valor": "$US50.000",
+            "valor": 50000,
             "img": toyota,
             "idCategory": "Asiatico"
             },
@@ -63,7 +63,7 @@ export  const data =
             "id": 7,
             "name": "Peugeot",
             "modelos": "208",
-            "valor": "$US30.000",
+            "valor": 30000,
             "img": peugeot,
             "idCategory": "Europeo"
             },
@@ -71,7 +71,7 @@ export  const data =
             "id": 8,
             "name": "Honda",
             "modelos": "Civic",
-            "valor": "US$60.000",
+            "valor": 60000,
             "img": Civic,
             "idCategory": "Asiatico"
             },
@@ -79,7 +79,7 @@ export  const data =
             "id": 9,
             "name": "Honda",
             "modelos": "HRV",
-            "valor": "US$90.000",
+            "valor": 90000,
             "img": HRV,
             "idCategory": "Asiatico"
             }
