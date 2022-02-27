@@ -14,8 +14,8 @@ import customFetch from "../helpers/helpCustomFetch";
     useEffect(() => {
         setTimeout(() => {
         setLoading(false);
-        }, 2000);
-        customFetch(2000, data)
+        }, 2);
+        customFetch(2, data)
         .then((catalogo) => {
             const elemfiltrado = catalogo.find(
             (item) => item.id === parseInt(idItem)

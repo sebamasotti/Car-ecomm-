@@ -14,8 +14,8 @@ const ItemlistContainer = () => {
     useEffect(() => {
         setTimeout(() => {
         setLoading(false);
-        }, 2000);
-        customFetch(2000, data)
+        }, 2);
+        customFetch(2, data)
         .then((catalogo) =>
             setProducts(
             idCategory

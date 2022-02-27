@@ -41,9 +41,13 @@ h1{
     color: #E0E1DD;
 }
 .cartCant {
-    width: 1rem;
-    background-color: red;
-    border-radius: 1rem;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 1.2rem;
+    width: 1.2rem;
+    background-color: deeppink;
+    border-radius: 0.5rem;
     text-align: center;
     font-weight: bold;
 }

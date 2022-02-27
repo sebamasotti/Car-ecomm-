@@ -36,29 +36,21 @@ const CartContextProvider = ({ children }) => {
         }
     };
     const deleteItem = (item) => {
-        const inCart = cartList.find(
-        (productInCart) => productInCart.id === item.id
-        );
-        if (inCart.counter === 1) {
-        setCartList(
-            cartList.filter((productInCart) => productInCart.id !== item.id)
-        );
-        } else {
-        setCartList((productInCart) => {
-            if (productInCart.id === item.id) {
-            return { ...inCart, counter: inCart.counter - 1 };
-            } else {
-            return productInCart;
-            }
-        });
-        }
+        let result =cartList.filter(itemFil => itemFil.id !== item.id);
+        setCartList(result);
+        console.log("Clicked", result);
     };
     const deleteAllCar = () => {
         setCartList([])
     }
 
+    const cartCant = () => {
+        let cant = cartList.map(item => item.counter)
+        return cant.reduce(((previus,current) => previus + current), 0)
+    }
+
     return (
-        <CartContext.Provider value={{ cartList, addToCart, deleteItem, deleteAllCar }}>
+        <CartContext.Provider value={{ cartList, addToCart, deleteItem, deleteAllCar, cartCant }}>
         {children}
         </CartContext.Provider>
     );
