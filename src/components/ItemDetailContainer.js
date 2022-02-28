@@ -1,9 +1,9 @@
 import { useEffect, useState } from "react";
-import data from "./data";
 import ItemDetail from "./ItemDetail";
 import { useParams } from "react-router-dom";
 import loadingGif from "../assets/loading.gif";
-import customFetch from "../helpers/helpCustomFetch";
+import db from "../utils/firebaseConfig";
+import { collection, getDocs } from "firebase/firestore";
 
     const ItemDetailContainer = () => {
     const [products, setProducts] = useState([]);
@@ -14,11 +14,20 @@ import customFetch from "../helpers/helpCustomFetch";
     useEffect(() => {
         setTimeout(() => {
         setLoading(false);
-        }, 2);
-        customFetch(2, data)
+        }, 500);
+
+        const firestoreFetch = async () => {
+            const listadoProductos = await getDocs(collection(db, "products"));
+            const dataFirestore = listadoProductos.docs.map( document => ({
+                id: document.id,
+                ...document.data()
+            }))
+            return dataFirestore;
+        }
+        firestoreFetch()            
         .then((catalogo) => {
             const elemfiltrado = catalogo.find(
-            (item) => item.id === parseInt(idItem)
+            (item) => item.id === idItem
             );
 
             setProducts(elemfiltrado);

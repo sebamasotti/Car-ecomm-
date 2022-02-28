@@ -1,9 +1,10 @@
 import { useEffect, useState } from "react";
 import ItemList from "./ItemList";
-import data from "./data";
 import { useParams } from "react-router-dom";
 import loadingGif from "../assets/loading.gif";
-import customFetch from "../helpers/helpCustomFetch";
+import db from "../utils/firebaseConfig";
+import { collection, getDocs } from "firebase/firestore";
+
 
 const ItemlistContainer = () => {
     const [products, setProducts] = useState([]);
@@ -13,17 +14,24 @@ const ItemlistContainer = () => {
 
     useEffect(() => {
         setTimeout(() => {
-        setLoading(false);
-        }, 2);
-        customFetch(2, data)
-        .then((catalogo) =>
-            setProducts(
-            idCategory
-                ? catalogo.filter((item) => item.idCategory === idCategory)
-                : catalogo
+            setLoading(false);
+            }, 500);
+        const firestoreFetch = async () => {
+            const listadoProductos = await getDocs(collection(db, "products"));
+            const dataFirestore = listadoProductos.docs.map( document => ({
+                id: document.id,
+                ...document.data()
+            }))
+            return dataFirestore;
+        }
+        firestoreFetch()
+            .then(data => setProducts(
+                idCategory
+                ? data.filter((item) => item.idCategory === idCategory)
+                : data
             )
-        )
-        .catch((error) => console.log(error));
+            )
+            .catch(error => console.log(error))
         // eslint-disable-next-line react-hooks/exhaustive-deps
     }, [idCategory]);
 
