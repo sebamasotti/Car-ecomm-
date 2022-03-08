@@ -1,13 +1,13 @@
-import { createContext, useState, useEffect } from "react";
+import { createContext, useState} from "react";
 
 export const CartContext = createContext();
 
 const CartContextProvider = ({ children }) => {
     const [cartList, setCartList] = useState([]);
 
-    useEffect(() => {
-        console.log(cartList);
-    }, [cartList]);
+    // useEffect(() => {
+    //     console.log(cartList);
+    // }, [cartList]);
 
     const addToCart = (item, counter) => {
         const inCart = cartList.find(
@@ -35,22 +35,39 @@ const CartContextProvider = ({ children }) => {
         ]);
         }
     };
-    const deleteItem = (item) => {
-        let result =cartList.filter(itemFil => itemFil.id !== item.id);
+    const deleteItem = (id) => {
+        let result = cartList.filter(itemFil => itemFil.id !== id);
         setCartList(result);
-        console.log("Clicked", result);
     };
     const deleteAllCar = () => {
-        setCartList([])
-    }
+        setCartList([]);
+    };
 
     const cartCant = () => {
-        let cant = cartList.map(item => item.counter)
-        return cant.reduce(((previus,current) => previus + current), 0)
+        let cant = cartList.map((item) => item.counter);
+        return cant.reduce((previus, current) => previus + current, 0);
+    };
+    const calcTotalItem = (idItem) => {
+        let index = cartList.map(item => item.idItem).indexOf(idItem);
+        return cartList[index].valor * cartList[index].counter; 
+    }
+    const calcSubTotal = () => {
+        let totalItem = cartList.map((item => calcTotalItem(item.idItem)));
+        return totalItem.reduce((previusValue, currentValue) => previusValue + currentValue);
+    }
+
+    const taxes = () => {
+        return calcSubTotal() * 0.21;
+    }
+
+    const calcTotal= () => {
+        return calcSubTotal();
     }
 
     return (
-        <CartContext.Provider value={{ cartList, addToCart, deleteItem, deleteAllCar, cartCant }}>
+        <CartContext.Provider
+        value={{ cartList, addToCart, deleteItem, deleteAllCar, cartCant, calcSubTotal, calcTotalItem, taxes, calcTotal }}
+        >
         {children}
         </CartContext.Provider>
     );

@@ -2,9 +2,7 @@ import { useEffect, useState } from "react";
 import ItemList from "./ItemList";
 import { useParams } from "react-router-dom";
 import loadingGif from "../assets/loading.gif";
-import db from "../utils/firebaseConfig";
-import { collection, getDocs } from "firebase/firestore";
-
+import { firestoreFetch } from "../helpers/firestoreFetch";
 
 const ItemlistContainer = () => {
     const [products, setProducts] = useState([]);
@@ -13,25 +11,16 @@ const ItemlistContainer = () => {
     const loadingImg = loadingGif;
 
     useEffect(() => {
-        setTimeout(() => {
-            setLoading(false);
-            }, 500);
-        const firestoreFetch = async () => {
-            const listadoProductos = await getDocs(collection(db, "products"));
-            const dataFirestore = listadoProductos.docs.map( document => ({
-                id: document.id,
-                ...document.data()
-            }))
-            return dataFirestore;
-        }
-        firestoreFetch()
-            .then(data => setProducts(
-                idCategory
+        setLoading(false);
+        firestoreFetch(idCategory)
+        .then((data) =>
+            setProducts(
+            idCategory
                 ? data.filter((item) => item.idCategory === idCategory)
                 : data
             )
-            )
-            .catch(error => console.log(error))
+        )
+        .catch((error) => console.log(error));
         // eslint-disable-next-line react-hooks/exhaustive-deps
     }, [idCategory]);
 
