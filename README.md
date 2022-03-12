@@ -2,10 +2,10 @@
 # CarShopp
 
 CarShopp is an e-commerce for car sales.
+
 ## Screenshots
 
-![App Screenshot](https://firebasestorage.googleapis.com/v0/b/car-ecomm.appspot.com/o/Captura%20de%20Pantalla%202022-03-12%20a%20la(s)%2016.31.07.png?alt=media&token=41040d6a-1aa1-4eb1-a6fe-3f58abb3d8c5)
-
+![App Screenshot](https://firebasestorage.googleapis.com/v0/b/car-ecomm.appspot.com/o/Captura%20de%20Pantalla%202022-03-12%20a%20la(s)%2016.31.07.JPEG?alt=media&token=ce63be23-0dcc-4c80-983d-4073eb07e0a6)
 
 
 ## Tech Stack
