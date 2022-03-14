@@ -14,7 +14,6 @@ const ItemDetail = (item) => {
         test.addToCart(item, counter)
     }
     
-    
     return (
         <div style={{display:'flex', flexWrap:'wrap', justifyContent:'center', padding: '1rem'}} className="container">
         <Card style={{padding: '0,5rem', height:'700px', width:'700px'}}>
