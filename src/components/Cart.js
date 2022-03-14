@@ -36,7 +36,7 @@ const Cart = () => {
         };
 
         createOrderFirestore()
-        .then(() => {
+        .then((info) => {
             test.deleteAllCar();
         })
         .catch((error) => console.log(error));
