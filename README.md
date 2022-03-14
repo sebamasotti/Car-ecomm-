@@ -18,11 +18,3 @@ CarShopp is an e-commerce for car sales.
 
 This project contains only client-side technology. For this reason, to run it you only need to open the index.html file in your favorite browser.
 
-## Authors
-
-- [@SebastianMasotti](https://github.com/sebamasotti)
-
-
-## License
-
-[©2022-SebastianMasotti](https://choosealicense.com/licenses/mit/)
