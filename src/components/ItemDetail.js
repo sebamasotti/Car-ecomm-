@@ -10,8 +10,7 @@ const ItemDetail = (item) => {
     const test = useContext(CartContext);
 
     const onAdd = (counter) => {
-        setItemCount(counter)
-        alert("Su cantidad agregada al carrito es de: " + counter)
+        setItemCount(counter)        
         test.addToCart(item, counter)
     }
     
@@ -53,7 +52,6 @@ const ItemDetail = (item) => {
                 : <Link to='/cart' > <CheckOut /> </Link>
             }
         </div>
-            
         </div>
 
     );

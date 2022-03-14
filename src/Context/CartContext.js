@@ -5,10 +5,6 @@ export const CartContext = createContext();
 const CartContextProvider = ({ children }) => {
     const [cartList, setCartList] = useState([]);
 
-    // useEffect(() => {
-    //     console.log(cartList);
-    // }, [cartList]);
-
     const addToCart = (item, counter) => {
         const inCart = cartList.find(
         (productInCart) => productInCart.id === item.id

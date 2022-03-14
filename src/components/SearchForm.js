@@ -6,11 +6,7 @@ const SearchForm = () => {
 
         if (event.keyCode === 32) {
             event.preventDefault();
-        } else {
-            
-        }
-
-        console.log(event.key);
+        } 
     }
 
     return (

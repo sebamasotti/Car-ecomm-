@@ -1,4 +1,4 @@
-import db from "../utils/firebaseConfig";
+import db from "./firebaseConfig";
 import { collection, getDocs, doc, getDoc } from "firebase/firestore";
 
 export const firestoreFetch = async () => {

@@ -2,7 +2,7 @@ import { useEffect, useState } from "react";
 import ItemList from "./ItemList";
 import { useParams } from "react-router-dom";
 import loadingGif from "../assets/loading.gif";
-import { firestoreFetch } from "../helpers/firestoreFetch";
+import { firestoreFetch } from "../utils/firestoreFetch";
 
 const ItemlistContainer = () => {
     const [products, setProducts] = useState([]);

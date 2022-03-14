@@ -28,7 +28,6 @@ const Cart = () => {
             }),
             total: test.calcTotal(),
         };
-        console.log(order);
 
         const createOrderFirestore = async () => {
             const newOrderRef = doc(collection(db, "orders"));
@@ -37,8 +36,7 @@ const Cart = () => {
         };
 
         createOrderFirestore()
-        .then((info) => {
-            alert("Your order has been created, with id: " + info.id);
+        .then(() => {
             test.deleteAllCar();
         })
         .catch((error) => console.log(error));

@@ -2,7 +2,7 @@ import { useEffect, useState } from "react";
 import ItemDetail from "./ItemDetail";
 import { useParams } from "react-router-dom";
 import loadingGif from "../assets/loading.gif";
-import { firestoreFetchOne } from "../helpers/firestoreFetch";
+import { firestoreFetchOne } from "../utils/firestoreFetch";
 
 const ItemDetailContainer = () => {
     const [products, setProducts] = useState([]);
